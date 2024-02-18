@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="static/css/style2.css">
+  
+</head>
+
+<body>
+  <div class="login">
+    <h1>Prediction of Bedload Sediment </h1>
+  </div>
+  
+ <div class="login-container">
+   <div class="form">
+   
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/predict"method="post">
+      <div class="input-group">
+        <select name="mod" id="mod">
+          <div class="select-wrapper">
+        <option value ="0">Choose a model</option>
+        <option value="1">Xgboost Regression</option>
+        <option value="2">Linear Regression</option>
+        <option value="3">K-nearest Neighbor Reg</option>
+        <option value="4">Extratree Regression</option>
+        <option value="5">Random Forest Regression</option>
+        <option value="6">Bagging Regression</option>
+          </div>
+        
+      </div>
+      <div class="input-group">
+    	<input type="text" name="w" placeholder="Width (m)" required="required" />
+      </div>
+      <div class="input-group">
+        <input type="text" name="d" placeholder="Sediment Diameter (mm)" required="required" />
+      </div>
+        <div class="input-group">
+		<input type="text" name="rho" placeholder="Sediment Density (kg/m3)" required="required" />
+  </div>
+    <div class="input-group">
+    	<input type="text" name="s" placeholder="slope" required="required" />
+    </div>
+      <div class="input-group">
+        <input type="text" name="q" placeholder="Discharge (m3/s)" required="required" />
+      </div>
+        <div class="input-group">
+		<input type="text" name="v" placeholder="Flow Velocity (m/s)" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="rd" placeholder="R/D Ratio" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="h" placeholder="Flow Depth (m)" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="hw" placeholder="H/W Ratio" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="fr" placeholder="Froude Number" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="Re" placeholder="Reynold Number" required="required" />
+  </div>
+        <div class="input-group">
+		<input type="text" name="sh" placeholder="Shield Parameter" required="required" />
+  </div>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+  </div>
+</div>
+<footer>
+    <p>This GUI is developed by Ayush Rathore and Dr Mahesh Patel, Department of Civil Engineering, Dr BR Ambedkar National institute of Technology, Jalandhar, India</p>
+		</footer>
+</body>
+
+</html>
